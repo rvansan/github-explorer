@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	mode: 'development', // ambiente da aplicação
 	entry: path.resolve(__dirname, 'src', 'index.jsx'), // arquivo de origem com diretório
+	devServer: {
+		contentBase: path.resolve(__dirname, 'public'),
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'), // diretório de destino
 		filename: 'bundle.js' // arquivo de destino
