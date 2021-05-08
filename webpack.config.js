@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	mode: 'development', // ambiente da aplicação
 	entry: path.resolve(__dirname, 'src', 'index.jsx'), // arquivo de origem com diretório
+	devtool: 'eval-source-map',
 	devServer: {
 		contentBase: path.resolve(__dirname, 'public'),
 	},
