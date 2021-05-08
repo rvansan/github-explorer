@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	mode: 'development', // ambiente da aplicação
@@ -10,6 +11,11 @@ module.exports = {
 	resolve: {
 		extensions : ['.js', '.jsx'], // tanto js quanto jsx precisam ser lidos
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'public', 'index.html')
+		})
+	],
 	module : { 
 		rules: [ // array de regras para cada tipo de arquivo
 			{
