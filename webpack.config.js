@@ -7,7 +7,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 module.exports = {
 	mode: isDevelopment ? 'development' : 'production',
 	devtool: isDevelopment ? 'eval-source-map': 'source-map',
-	entry: path.resolve(__dirname, 'src', 'index.jsx'), // arquivo de origem com diretório
+	entry: path.resolve(__dirname, 'src', 'index.tsx'), // arquivo de origem com diretório
 	devServer: {
 		contentBase: path.resolve(__dirname, 'public'),
 		hot: true
@@ -17,7 +17,7 @@ module.exports = {
 		filename: 'bundle.js' // arquivo de destino
 	},
 	resolve: {
-		extensions : ['.js', '.jsx'], // tanto js quanto jsx precisam ser lidos
+		extensions : ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	plugins:[
 		isDevelopment && new ReactRefreshWebpackPlugin(),
@@ -28,7 +28,7 @@ module.exports = {
 	module : { 
 		rules: [ // array de regras para cada tipo de arquivo
 			{
-				test: /\.jsx$/,
+				test: /\.(j|t)sx$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
