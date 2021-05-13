@@ -27,6 +27,11 @@ module.exports = {
 				test: /\.jsx$/, // \.jsx$ -> verifica se o arquivo acaba com ".jsx"
 				exclude: /node_modules/, //exclui a pasta node_modules dessa verifcação
 				use: 'babel-loader' // loader para os arquivos javascript 
+			},
+			{
+				test: /\.css$/,
+				exclude: /node_modules/,
+				use: ['style-loader', 'css-loader'],
 			}
 		]
 	}
